@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { RouteLocationNormalized } from "vue-router";
+
+definePageMeta({
+  validate: async (route: RouteLocationNormalized) => {
+    return /^\d+$/.test(route.params.id as string);
+  },
+});
+</script>
 
 <template>
   <div>

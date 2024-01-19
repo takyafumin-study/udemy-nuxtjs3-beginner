@@ -1,3 +1,4 @@
+root: true
 env:
   browser: true
   es2021: true
@@ -14,4 +15,5 @@ parserOptions:
 plugins:
   - "@typescript-eslint"
   - vue
+globals: { "definePageMeta": "readonly" }
 rules: { "vue/multi-word-component-names": "off" }
