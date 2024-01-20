@@ -1,5 +1,9 @@
+<script setup lang="ts">
+const title = useState("title", () => "Hello World!");
+</script>
+
 <template>
   <div>
-    <p>Hello Nuxt!</p>
+    <p>{{ title }}</p>
   </div>
 </template>
