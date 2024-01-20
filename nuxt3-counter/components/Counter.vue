@@ -1,24 +1,16 @@
 <script setup lang="ts">
-const count = ref<number>(0);
-
-const increment = () => count.value++;
-const decrement = () => {
-  if (count.value <= 0) {
-    return;
-  }
-  count.value--;
-};
-const reset = () => (count.value = 0);
+const counterStore = useCounterState();
+const { counter } = counterStore;
 </script>
 
 <template>
   <div>
     <h1>Counter</h1>
-    {{ count }}
+    {{ counter }}
     <div>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
-      <button @click="reset">reset</button>
+      <button @click="counterStore.countUp">+</button>
+      <button @click="counterStore.countDown">-</button>
+      <button @click="counterStore.reset">reset</button>
     </div>
   </div>
 </template>
