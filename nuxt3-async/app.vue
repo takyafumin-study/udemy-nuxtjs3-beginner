@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import type { User } from "~/types/user";
 
-const { data: users } = await useFetch<Array<User>>(
-  "https://jsonplaceholder.typicode.com/users"
+const { data: users, error } = await useFetch<Array<User>>(
+  "https://jsonplaceholder.typicode.com/userss"
 );
+
+if (error.value) {
+  throw createError({ statusCode: 404, statusMessage: "Page NotFound !!!!" });
+}
 </script>
 <template>
   <div>
