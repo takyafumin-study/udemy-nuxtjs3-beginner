@@ -1,9 +1,13 @@
 <script setup lang="ts">
-const title = useState("title", () => "Hello World!");
+const titleState = useTitle();
+const { title } = titleState;
 </script>
 
 <template>
   <div>
-    <p>{{ title }}</p>
+    <h1>{{ title }}</h1>
+    <button @click="() => titleState.changeTitle('Hello Nuxt3!!')">
+      changeTitle
+    </button>
   </div>
 </template>
