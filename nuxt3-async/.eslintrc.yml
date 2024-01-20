@@ -1,3 +1,4 @@
+root: true
 env:
   browser: true
   es2021: true
@@ -5,15 +6,13 @@ env:
 extends:
   - eslint:recommended # eslint推奨ルール
   - plugin:@typescript-eslint/recommended
-  - plugin:@typescript-eslint/stylistic
   - plugin:vue/vue3-recommended
+  - "@nuxtjs/eslint-config-typescript"
   - prettier
-parser: "vue-eslint-parser"
 parserOptions:
   ecmaVersion: latest
   sourceType: module
   parser: "@typescript-eslint/parser"
-  project: true
   extraFileExtensions:
     - ".vue"
 plugins:
