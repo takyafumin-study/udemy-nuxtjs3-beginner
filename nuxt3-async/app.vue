@@ -2,7 +2,7 @@
 import type { User } from "~/types/user";
 
 const { data: users, error } = await useFetch<Array<User>>(
-  "https://jsonplaceholder.typicode.com/userss"
+  "https://jsonplaceholder.typicode.com/users"
 );
 
 if (error.value) {
@@ -11,6 +11,8 @@ if (error.value) {
 </script>
 <template>
   <div>
+    <img src="~assets/cat.jpg" alt="cat" />
+
     <ul>
       <li v-for="user in users" :key="user.id">
         {{ user.id }}, {{ user.name }}
