@@ -31,20 +31,21 @@ const clearTasks = () => {
 </script>
 
 <template>
-  <div>
-    <h1>To DO</h1>
-    <form @submit.prevent="addTask">
-      <input v-model="newTask" name="newTask" autocomplete="off" />
-      <button>Add</button>
-    </form>
-    <ul>
-      <li v-for="(task, index) in tasks" :key="index">
-        <span>{{ task }}</span>
-        <button @click="() => deleteTask(index)">Delete</button>
-      </li>
-    </ul>
-    <button @click="clearTasks">Clear</button>
-  </div>
+  <NuxtLayout>
+    <div>
+      <form @submit.prevent="addTask">
+        <input v-model="newTask" name="newTask" autocomplete="off" />
+        <button>Add</button>
+      </form>
+      <ul>
+        <li v-for="(task, index) in tasks" :key="index">
+          <span>{{ task }}</span>
+          <button @click="() => deleteTask(index)">Delete</button>
+        </li>
+      </ul>
+      <button @click="clearTasks">Clear</button>
+    </div>
+  </NuxtLayout>
 </template>
 
 <style scoped></style>
